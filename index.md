@@ -39,7 +39,4 @@ Here are some of my best Data Science Projects. I have explored various machine-
 [Recognising Handwritten numbers using Neural Networks]
 
 
-Aaaaaaa
-Aaaa
-Aaa
 
