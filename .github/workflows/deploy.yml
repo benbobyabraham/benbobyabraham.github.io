@@ -27,7 +27,8 @@ jobs:
           cname: benboby.com
 
       - name: Trigger Pages Build and Deployment
-        uses: github/pages-build-action@v2
-        if: github.ref == 'refs/heads/main'
+        uses: peter-evans/repository-dispatch@v1 
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
+	  repository: benbobyabraham/benbobyabraham.github.io
+          workflow: pages-build-deployment 
