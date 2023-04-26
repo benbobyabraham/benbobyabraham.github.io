@@ -31,4 +31,4 @@ jobs:
         with:
           token: ${{ secrets.MY_TOKEN }}
           repository: benbobyabraham/benbobyabraham.github.io
-          workflow: pages-build-deployment 
+          event-type: pages-build-deployment 
