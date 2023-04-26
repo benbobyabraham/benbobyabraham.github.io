@@ -25,3 +25,9 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./build
           cname: benboby.com
+
+      - name: Trigger Pages Build and Deployment
+        uses: github/pages-build-action@v2
+        if: github.ref == 'refs/heads/main'
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
