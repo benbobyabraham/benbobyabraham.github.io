@@ -29,6 +29,6 @@ jobs:
       - name: Trigger Pages Build and Deployment
         uses: peter-evans/repository-dispatch@v1 
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-	  repository: benbobyabraham/benbobyabraham.github.io
+          token: ${{ secrets.MY_TOKEN }}
+          repository: benbobyabraham/benbobyabraham.github.io
           workflow: pages-build-deployment 
