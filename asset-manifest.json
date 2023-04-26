@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/benbobyabraham.github.io/static/css/main.073c9b0a.css",
+    "main.js": "/benbobyabraham.github.io/static/js/main.aaff933b.js",
+    "static/js/787.86c60b39.chunk.js": "/benbobyabraham.github.io/static/js/787.86c60b39.chunk.js",
+    "static/media/logo.svg": "/benbobyabraham.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/benbobyabraham.github.io/index.html",
+    "main.073c9b0a.css.map": "/benbobyabraham.github.io/static/css/main.073c9b0a.css.map",
+    "main.aaff933b.js.map": "/benbobyabraham.github.io/static/js/main.aaff933b.js.map",
+    "787.86c60b39.chunk.js.map": "/benbobyabraham.github.io/static/js/787.86c60b39.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.aaff933b.js"
+  ]
+}
