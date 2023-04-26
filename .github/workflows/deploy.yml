@@ -24,4 +24,4 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./build
-          custom_domain: benboby.com
+          cname: benboby.com
