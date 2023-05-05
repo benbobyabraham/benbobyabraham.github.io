@@ -1,15 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import LinkedinBadge from './components/LinkedinBadge';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>BEN BOBY</h1>
-        <p>
-          Portfolio Website - Under maintainance [27/04/2023]
-        </p>
+        <div style={{display:'flex'}}>
+          <img src={logo} className="App-logo" alt="logo" />
+          <LinkedinBadge/>
+        </div>
       </header>
     </div>
   );
