@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import LinkedinBadge from './components/LinkedinBadge';
-import ContactForm from './components/ContactForm';
+
 
 
 function App() {
