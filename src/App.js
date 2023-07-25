@@ -22,7 +22,7 @@ function App() {
       <footer>
         <nav>
           <h6>
-            Was too bored to build the rest of it....
+            Was too bored to build the rest of it....         @benbobyabraham@gmail.com  #+91-8547197319
           </h6>
         </nav>
       </footer>
