@@ -1,32 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-import LinkedinBadge from './components/LinkedinBadge';
-
-
+import React, { useState } from 'react';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import theme, { darkTheme } from './styles/theme';
+import Layout from './components/layout/Layout';
+import Home from './components/sections/Home';
+import About from './components/sections/About';
+import Portfolio from './components/sections/Portfolio';
+import Skills from './components/sections/Skills';
+import Experience from './components/sections/Experience';
+import Education from './components/sections/Education';
+import Blog from './components/sections/Blog';
+import Contact from './components/sections/Contact';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div className="App">
-      <nav><h3>
-      Ben Boby Senior Data Scientist - NTT Data
-      </h3> 
-      </nav>
-      <header className="App-header">
-        <div style={{display:'flex'}}>
-          <a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/ben-boby-3ba0a8144?trk=profile-badge" target="_blank" rel="noreferrer">
-            <img src={logo} className="App-logo" alt="logo" />
-          </a>
-          <LinkedinBadge/>
-        </div>
-      </header>
-      <footer>
-        <nav>
-          <h6>
-            Was too bored to build the rest of it....         @benbobyabraham@gmail.com  #+91-8547197319
-          </h6>
-        </nav>
-      </footer>
-    </div>
+    <ThemeProvider theme={isDarkMode ? darkTheme : theme}>
+      <CssBaseline />
+      <Layout toggleTheme={toggleTheme} isDarkMode={isDarkMode}>
+        <Home />
+        <About />
+        <Portfolio />
+        <Skills />
+        <Experience />
+        <Education />
+        <Blog />
+        <Contact />
+      </Layout>
+    </ThemeProvider>
   );
 }
 
