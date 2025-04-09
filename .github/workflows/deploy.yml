@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy React App to GitHub Pages
 
 on:
   push:
@@ -7,34 +7,31 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # The OS on which the action runs
+    runs-on: ubuntu-latest  # The operating system on which the action will run.
 
     steps:
-      # Step 1: Checkout the code
+      # Step 1: Checkout the code from the main branch
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Install dependencies
+      # Step 2: Set up Node.js (use the version you need for your project)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Use the version of Node.js required by your app
+
+      # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Step 3: Build the website
-      - name: Build website
-        run: npm run build  # This will build the React app, the output will be in ./build
+      # Step 4: Build the React app
+      - name: Build the React app
+        run: npm run build  # This command builds the app and outputs to ./build directory.
 
-      # Step 4: Clean the gh-pages branch (if necessary) - Make sure it is removed before deploying
-      - name: Clean gh-pages branch
-        run: |
-          git fetch --all
-          git checkout gh-pages || git checkout --orphan gh-pages  # Create gh-pages branch if it doesn't exist
-          git rm -rf .  # Clean out any old files in gh-pages
-          git commit -m "Clean gh-pages branch"
-          git push origin gh-pages --force  # Push the empty state to the gh-pages branch
-
-      # Step 5: Deploy to GitHub Pages (Using the Personal Access Token for HTTPS deployment)
+      # Step 5: Deploy to GitHub Pages using peaceiris/actions-gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_TOKEN }}  # Use your Personal Access Token
-          publish_dir: ./build  # The directory where the built files are stored (default is ./build for React)
-          cname: benboby.com  # Optional: If you're using a custom domain
+          github_token: ${{ secrets.GH_TOKEN }}  # Use the Personal Access Token for authentication
+          publish_dir: ./build  # The directory containing the built app
+          cname: benboby.com  # Optional: If you are using a custom domain
