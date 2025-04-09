@@ -20,14 +20,14 @@ jobs:
 
       # Step 3: Build the website
       - name: Build website
-        run: npm run build  # Adjust this if your build command is different.
+        run: npm run build  # This will build the React app, the output will be in ./build
 
       # Step 4: Deploy to GitHub Pages (Using the Personal Access Token for HTTPS deployment)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }}  # Use your Personal Access Token
-          publish_dir: ./build  # The directory where the built files are stored
+          publish_dir: ./build  # The directory where the built files are stored (default is ./build for React)
           cname: benboby.com  # Optional: If you're using a custom domain
 
       # Optional: Trigger Pages Build and Deployment (this might not be necessary if the action already triggers deployment)
