@@ -3,32 +3,37 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # Trigger the deployment when you push to the main branch.
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # The OS on which the action runs
 
     steps:
+      # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Step 2: Install dependencies
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
+      # Step 3: Build the website
       - name: Build website
-        run: npm run build
+        run: npm run build  # Adjust this if your build command is different.
 
+      # Step 4: Deploy to GitHub Pages (Using the Personal Access Token for HTTPS deployment)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./build
-          cname: benboby.com
+          github_token: ${{ secrets.GH_TOKEN }}  # Use your Personal Access Token
+          publish_dir: ./build  # The directory where the built files are stored
+          cname: benboby.com  # Optional: If you're using a custom domain
 
+      # Optional: Trigger Pages Build and Deployment (this might not be necessary if the action already triggers deployment)
       - name: Trigger Pages Build and Deployment
-        uses: peter-evans/repository-dispatch@v1 
+        uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets.MY_TOKEN }}
+          token: ${{ secrets.MY_TOKEN }}  # Use another token or the same if needed
           repository: benbobyabraham/benbobyabraham.github.io
-          event-type: pages-build-deployment 
+          event-type: pages-build-deployment
