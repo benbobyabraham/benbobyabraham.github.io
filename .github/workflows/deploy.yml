@@ -22,14 +22,14 @@ jobs:
       - name: Build website
         run: npm run build  # This will build the React app, the output will be in ./build
 
-      # Step 4: Clean the gh-pages branch before deploying
+      # Step 4: Clean the gh-pages branch (if necessary) - Make sure it is removed before deploying
       - name: Clean gh-pages branch
         run: |
           git fetch --all
-          git checkout gh-pages
-          git rm -rf .
+          git checkout gh-pages || git checkout --orphan gh-pages  # Create gh-pages branch if it doesn't exist
+          git rm -rf .  # Clean out any old files in gh-pages
           git commit -m "Clean gh-pages branch"
-          git push origin gh-pages
+          git push origin gh-pages --force  # Push the empty state to the gh-pages branch
 
       # Step 5: Deploy to GitHub Pages (Using the Personal Access Token for HTTPS deployment)
       - name: Deploy to GitHub Pages
