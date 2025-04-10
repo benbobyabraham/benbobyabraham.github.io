@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Container, Typography, Stack, Button } from '@mui/material';
+import { Box, Container, Typography, Stack, Button, Avatar } from '@mui/material';
 import { ArrowForward, Download } from '@mui/icons-material';
 import { Link as ScrollLink } from 'react-scroll';
 import { motion } from 'framer-motion';
+import headshot from '../../artifacts/ben_boby_headshot.jpg';
 
 const Home = () => {
   return (
@@ -26,7 +27,19 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Stack spacing={4} sx={{ maxWidth: '100%', mx: 'auto' }}>
+          <Stack spacing={4} sx={{ maxWidth: '100%', mx: 'auto', alignItems: 'center' }}>
+            <Avatar
+              src={headshot}
+              alt="Ben Boby"
+              sx={{
+                width: { xs: 200, sm: 250, md: 300 },
+                height: { xs: 200, sm: 250, md: 300 },
+                mb: 2,
+                border: (theme) => `4px solid ${theme.palette.primary.main}`,
+                boxShadow: (theme) => `0 0 20px ${theme.palette.primary.main}30`,
+              }}
+            />
+
             <Typography
               variant="h1"
               component="h1"
@@ -101,7 +114,7 @@ const Home = () => {
                 variant="outlined"
                 size="large"
                 startIcon={<Download />}
-                href="/resume.pdf"
+                href="/artifacts/ben_boby_resume.pdf"
                 target="_blank"
                 sx={{ minWidth: { xs: 200, sm: 220 } }}
               >
