@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.721bda18.css",
-    "main.js": "/static/js/main.90bcc980.js",
+    "main.js": "/static/js/main.4283186e.js",
     "static/js/787.86c60b39.chunk.js": "/static/js/787.86c60b39.chunk.js",
     "static/media/ben_boby_headshot.jpg": "/static/media/ben_boby_headshot.cd3a631fecea2a9ae5ea.jpg",
     "index.html": "/index.html",
     "main.721bda18.css.map": "/static/css/main.721bda18.css.map",
-    "main.90bcc980.js.map": "/static/js/main.90bcc980.js.map",
+    "main.4283186e.js.map": "/static/js/main.4283186e.js.map",
     "787.86c60b39.chunk.js.map": "/static/js/787.86c60b39.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.721bda18.css",
-    "static/js/main.90bcc980.js"
+    "static/js/main.4283186e.js"
   ]
 }
