@@ -11,6 +11,7 @@ import Experience from './components/sections/Experience';
 import Education from './components/sections/Education';
 import Blog from './components/sections/Blog';
 import Contact from './components/sections/Contact';
+import SEO from './components/SEO';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -22,6 +23,7 @@ function App() {
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : theme}>
       <CssBaseline />
+      <SEO />
       <Layout toggleTheme={toggleTheme} isDarkMode={isDarkMode}>
         <Home />
         <About />
